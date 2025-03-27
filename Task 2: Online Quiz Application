@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class QuizApplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String[][] questions = {
+            {"What is the capital of France?", "A. Berlin", "B. Paris", "C. Rome", "D. Madrid", "B"},
+            {"What is 5 + 3?", "A. 6", "B. 7", "C. 8", "D. 9", "C"},
+        };
+        
+        int score = 0;
+        
+        for (String[] q : questions) {
+            System.out.println("\n" + q[0]);
+            for (int i = 1; i <= 4; i++) {
+                System.out.println(q[i]);
+            }
+            System.out.print("Enter your answer (A/B/C/D): ");
+            String answer = scanner.next().toUpperCase();
+            
+            if (answer.equals(q[5])) {
+                score++;
+            }
+        }
+        
+        System.out.println("\nYour score: " + score + "/" + questions.length);
+        scanner.close();
+    }
+}
